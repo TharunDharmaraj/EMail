@@ -2,21 +2,23 @@ import smtplib,ssl
 from email.mime.text import MIMEText
 
 # Login credentials for the email account you'll be sending the email from
-username = 'tharundharmaraj@gmail.com'
-password = 'higlwedycvdcllly'
-# username = 'tharunyuvithar123@gmail.com'
-# password = 'lcczmzbokcvgkugq'
+# username = 'tharundharmaraj@gmail.com'
+# password = 'higlwedycvdcllly'
+username = 'tharunyuvithar123@gmail.com'
+password = 'lcczmzbokcvgkugq'
 
-recipients = []
-with open("today.txt","r") as file:
-    curr = file.readline()
-    while(curr):
-        hash_pos = curr.find("#")
-        name = curr[0:hash_pos]
-        id = curr[hash_pos+1:len(curr)-1]
-        this_list = [name,id]
-        recipients.append(this_list)
-        curr = file.readline()
+# recipients = []
+# with open("emails_with_name.txt", "r") as file:
+#     curr = file.readline()
+#     while(curr):
+#         hash_pos = curr.find("#")
+#         name = curr[0:hash_pos]
+#         id = curr[hash_pos+1:len(curr)-1]
+#         this_list = [name,id]
+#         recipients.append(this_list)
+#         curr = file.readline()
+        
+        
 # with open("emails_with_name.txt", "r") as file:
 #     curr = file.readline()
 #     while(curr):
@@ -27,13 +29,13 @@ with open("today.txt","r") as file:
 #         recipients.append(this_list)
 #         curr = file.readline()
 # print(recipients,len(recipients))
+
+
 # List of email addresses to send the email to
-# recipients = [["Tharun",'tharund@student.tce.edu']]
+recipients = [["tharun", 'tharundharmaraj@gmail.com']]
+#               ["Jared", "jared@jokullmedia.com"]]
             #   ,["Yuvi","tharunyuvithar123@gmail.com"]]
             #   ,'thirumalai@student.tce.edu', 'tharunyuvithar123@gmail.com']
-
-
-
 
 # Connect to the server and send the email
 server = smtplib.SMTP('smtp.gmail.com',587)
@@ -60,7 +62,7 @@ for recipient in recipients:
       background-color: #262729;
         border-radius: 13px;
         padding:25px 5px;
-        margin: 25px 5px;
+        margin: 25px 5px 25px 10px;
         box-shadow: 1px 1px 1.5px #000000, -1px -1px 2px #ffffff;
     "
   >
@@ -133,6 +135,16 @@ for recipient in recipients:
         of the background music alone(Without Voices).
       </p>
       <p style="color: white; font-size: 13px">
+        <b>Pricing:</b>
+      </p>
+     <p  style="color: white; font-size: 13px">
+     I can provide translation and AI voice-over of your 5 minute video for</p>
+      <p style="color: white; font-size: 13px">$10 -> 1 language(1 video file for one language)</p>
+      <p style="color: white; font-size: 13px">$20 -> 3 languages(3 video files for three languages)</p>
+    <p style="color: white; font-size: 13px"> <b> $30 -> 5 languages(5 video files for five languages)</b></p>
+    <p style="color: white; font-size: 13px">  And I also do custom orders with multiple languages for custom video duration based on your wish.
+      (More the  languages,less the cost).</p>
+      <p style="color: white; font-size: 13px">
         <b
           >If you want a <i>demo</i>, you just provide the link of your youtube
           video and I will provide you the dubbed version of the video with
@@ -143,7 +155,6 @@ for recipient in recipients:
       <p style="color: white; font-size: 13px">Regards,</p>
       <p style="color: white; font-size: 13px">Tharun.</p>
     <p style="text-align: center;color: white;">Contact Support</p>
-
     <div
       style="
        display: flex; flex-wrap: wrap;justify-content: center;
@@ -225,7 +236,7 @@ style="flex: 1; margin-right: 10px; border-radius:50%;margin-bottom:15px"
         message["From"] = username
         message["To"] = recipient_email
         server.sendmail(username, recipient_email, message.as_string())
-        print(f"Email sent successfully to  {recipient_email}.")
+        print(f"Email sent successfully to  {recipient_email}")
     except Exception as e:
-        print(f"Unsuccessful{e}")
+        print(f"{recipient_email}!Unsuccessful{e}")
 server.quit()
