@@ -1,4 +1,5 @@
-import smtplib,ssl
+import smtplib
+import ssl
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
@@ -18,11 +19,11 @@ with open("today.txt", "r") as file:
         hash_pos = curr.find("#")
         name = curr[0:hash_pos]
         id = curr[hash_pos+1:len(curr)-1]
-        this_list = [name,id]
+        this_list = [name, id]
         recipients.append(this_list)
         curr = file.readline()
-        
-        
+
+
 # with open("emails_with_name.txt", "r") as file:
 #     curr = file.readline()
 #     while(curr):
@@ -44,7 +45,7 @@ for recipient in recipients:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls(context=ssl.create_default_context())
         server.login(username, password)
-        
+
         recipient_name = recipient[0]
         recipient_email = recipient[1]
         message = MIMEMultipart()
@@ -136,8 +137,7 @@ with translated captions and description for each.
             attach.add_header("Content-Disposition", "attachment",
                               filename="my_works_with_youtube_links.docx")
             message.attach(attach)
-            
-        
+
         server.sendmail(username, recipient_email, message.as_string())
         print(f"Email sent successfully to  {recipient_email}")
     except Exception as e:
