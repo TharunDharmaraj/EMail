@@ -36,7 +36,7 @@ with open("today.txt", "r") as file:
 
 
 # List of email addresses to send the email to
-# recipients = [["thirumalai", 'fiverrtharun@gmail.com']]
+# recipients = [["yuvi", 'fiverryuvaraj@gmail.com'],]
 
 for recipient in recipients:
     try:
@@ -109,7 +109,7 @@ for recipient in recipients:
 One language -  2$ per minute of VO
 Three languages - 1.5$ per minute of VO
 Five Languages - 1.2$ per minute of VO
->5 Languages - 1$ per minute of VO
+>5 Languages - <b>1$ per minute of VO</b>
 For each language, I will be sending a video file dubbed into the respective language,
 with translated captions and description for each. 
       </p>
