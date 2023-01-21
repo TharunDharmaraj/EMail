@@ -105,6 +105,15 @@ for recipient in recipients:
         of the background music alone(Without Voices).
       </p>
       <p style="color: white; font-size: 16px">
+        <b>Pricing:</b>
+One language -  2$ per minute of VO
+Three languages - 1.5$ per minute of VO
+Five Languages - 1.2$ per minute of VO
+>5 Languages - 1$ per minute of VO
+For each language, I will be sending a video file dubbed into the respective language,
+with translated captions and description for each. 
+      </p>
+      <p style="color: white; font-size: 16px">
         <b
           >If you want a <i>demo</i>, you just provide the link of your youtube
           video and I will provide you the dubbed version of the video with
